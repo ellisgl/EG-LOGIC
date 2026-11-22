@@ -1,0 +1,7 @@
+* BUF reference (gf180mcuD)
+.subckt BUF A Y VDD VSS
+X1 VDD A x VDD pfet_03v3 w=2u l=0.28u
+X2 VSS A x VSS nfet_03v3 w=1u l=0.28u
+X3 VDD x Y VDD pfet_03v3 w=2u l=0.28u
+X4 VSS x Y VSS nfet_03v3 w=1u l=0.28u
+.ends

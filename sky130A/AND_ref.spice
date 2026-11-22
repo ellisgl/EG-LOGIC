@@ -1,0 +1,9 @@
+* AND reference (sky130A)
+.subckt AND A B Y VDD VSS
+X1 x A VDD VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X2 VDD B x VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X3 x A n0_1 VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X4 n0_1 B VSS VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X5 VDD x Y VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X6 VSS x Y VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+.ends

@@ -1,0 +1,22 @@
+* NGSPICE file created from NOR.ext - technology: gf180mcuD
+
+.subckt NOR A B Y VDD VSS
+X0 Y B VSS VSS nfet_03v3 ad=0.45p pd=2.9u as=0.265p ps=1.53u w=1u l=0.28u
+X1 VDD B a_657_86# VDD pfet_03v3 ad=0.9p pd=4.9u as=0.53p ps=2.53u w=2u l=0.28u
+X2 a_657_86# A Y VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X3 VSS A Y VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+C0 a_657_86# VDD 0.03576f
+C1 a_657_86# Y 0.02609f
+C2 VDD A 0.60539f
+C3 VDD B 0.12548f
+C4 VDD Y 0.91931f
+C5 A B 0.05236f
+C6 A Y 0.06282f
+C7 B Y 0.05677f
+C8 Y VSS 1.96192f
+C9 B VSS 1.30846f
+C10 A VSS 0.52794f
+C11 VDD VSS 6.11409f
+C12 a_657_86# VSS 0.00205f
+.ends
+

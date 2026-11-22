@@ -1,0 +1,9 @@
+* NGSPICE file created from BUF.ext - technology: gf180mcuD
+
+.subckt BUF A Y VDD VSS
+X0 a_379_n286# A VSS VSS nfet_03v3 ad=0.45p pd=2.9u as=0.45p ps=2.9u w=1u l=0.28u
+X1 Y a_379_n286# VSS VSS nfet_03v3 ad=0.625p pd=3.25u as=0.625p ps=3.25u w=1u l=0.28u
+X2 Y a_379_n286# VDD VDD pfet_03v3 ad=1.25p pd=5.25u as=1.25p ps=5.25u w=2u l=0.28u
+X3 a_379_n286# A VDD VDD pfet_03v3 ad=0.9p pd=4.9u as=0.9p ps=4.9u w=2u l=0.28u
+.ends
+

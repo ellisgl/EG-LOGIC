@@ -1,0 +1,8 @@
+BUF   DRC 0    LVS match
+NOT   DRC 0    LVS match
+AND   DRC 0    LVS match
+NAND  DRC 0    LVS match
+OR    DRC 0    LVS match
+NOR   DRC 0    LVS match
+XOR   DRC 0    LVS match
+XNOR  DRC 0    LVS match

@@ -1,0 +1,15 @@
+* NGSPICE file created from XOR.ext - technology: gf180mcuD
+
+.subckt XOR A B Y VDD VSS
+X0 Y a_1009_n395# a_1463_195# VDD pfet_03v3 ad=1.25p pd=5.25u as=0.705p ps=2.705u w=2u l=0.28u
+X1 a_1463_195# B VDD VDD pfet_03v3 ad=0.705p pd=2.705u as=0.53p ps=2.53u w=2u l=0.28u
+X2 VDD A a_1463_195# VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X3 a_1009_n395# B VSS VSS nfet_03v3 ad=0.45p pd=2.9u as=0.265p ps=1.53u w=1u l=0.28u
+X4 a_1609_n395# A Y VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X5 VDD B a_1155_195# VDD pfet_03v3 ad=0.9p pd=4.9u as=0.53p ps=2.53u w=2u l=0.28u
+X6 VSS B a_1609_n395# VSS nfet_03v3 ad=0.3525p pd=1.705u as=0.265p ps=1.53u w=1u l=0.28u
+X7 a_1155_195# A a_1009_n395# VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X8 VSS A a_1009_n395# VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X9 Y a_1009_n395# VSS VSS nfet_03v3 ad=0.625p pd=3.25u as=0.3525p ps=1.705u w=1u l=0.28u
+.ends
+

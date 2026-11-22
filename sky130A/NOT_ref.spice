@@ -1,0 +1,5 @@
+* NOT reference (sky130A)
+.subckt NOT A Y VDD VSS
+X1 VDD A Y VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X2 VSS A Y VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+.ends

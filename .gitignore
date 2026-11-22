@@ -1,0 +1,7 @@
+__pycache__/
+sim/out/
+*_masks.npz
+*_magic.log
+*_netgen.log
+drc_boxes.txt
+*_drc.png

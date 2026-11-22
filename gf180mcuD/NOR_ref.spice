@@ -1,0 +1,7 @@
+* NOR reference (gf180mcuD)
+.subckt NOR A B Y VDD VSS
+X1 Y A p0_1 VDD pfet_03v3 w=2u l=0.28u
+X2 p0_1 B VDD VDD pfet_03v3 w=2u l=0.28u
+X3 Y A VSS VSS nfet_03v3 w=1u l=0.28u
+X4 VSS B Y VSS nfet_03v3 w=1u l=0.28u
+.ends

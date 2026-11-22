@@ -1,0 +1,22 @@
+* NGSPICE file created from NAND.ext - technology: gf180mcuD
+
+.subckt NAND A B Y VDD VSS
+X0 a_512_n286# A Y VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X1 Y B VDD VDD pfet_03v3 ad=0.9p pd=4.9u as=0.53p ps=2.53u w=2u l=0.28u
+X2 VSS B a_512_n286# VSS nfet_03v3 ad=0.45p pd=2.9u as=0.265p ps=1.53u w=1u l=0.28u
+X3 VDD A Y VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+C0 a_512_n286# VDD 0.00121f
+C1 a_512_n286# Y 0.01435f
+C2 VDD A 0.61554f
+C3 VDD B 0.12644f
+C4 VDD Y 1.2128f
+C5 A B 0.05095f
+C6 A Y 0.06299f
+C7 B Y 0.06123f
+C8 Y VSS 1.65258f
+C9 B VSS 1.19862f
+C10 A VSS 0.4271f
+C11 VDD VSS 6.05143f
+C12 a_512_n286# VSS 0.01607f
+.ends
+

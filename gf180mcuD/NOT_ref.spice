@@ -1,0 +1,5 @@
+* NOT reference (gf180mcuD)
+.subckt NOT A Y VDD VSS
+X1 VDD A Y VDD pfet_03v3 w=2u l=0.28u
+X2 VSS A Y VSS nfet_03v3 w=1u l=0.28u
+.ends

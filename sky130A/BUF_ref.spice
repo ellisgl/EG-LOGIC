@@ -1,0 +1,7 @@
+* BUF reference (sky130A)
+.subckt BUF A Y VDD VSS
+X1 VDD A x VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X2 VSS A x VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X3 VDD x Y VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X4 VSS x Y VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+.ends

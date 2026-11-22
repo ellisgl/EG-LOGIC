@@ -1,0 +1,13 @@
+* XNOR reference (gf180mcuD)
+.subckt XNOR A B Y VDD VSS
+X1 c A VDD VDD pfet_03v3 w=2u l=0.28u
+X2 VDD B c VDD pfet_03v3 w=2u l=0.28u
+X3 c A n0_1 VSS nfet_03v3 w=1u l=0.28u
+X4 n0_1 B VSS VSS nfet_03v3 w=1u l=0.28u
+X5 Y A p1_1 VDD pfet_03v3 w=2u l=0.28u
+X6 p1_1 B VDD VDD pfet_03v3 w=2u l=0.28u
+X7 VDD c Y VDD pfet_03v3 w=2u l=0.28u
+X8 n1 A VSS VSS nfet_03v3 w=1u l=0.28u
+X9 VSS B n1 VSS nfet_03v3 w=1u l=0.28u
+X10 n1 c Y VSS nfet_03v3 w=1u l=0.28u
+.ends

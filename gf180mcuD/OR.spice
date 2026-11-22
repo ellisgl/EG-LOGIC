@@ -1,0 +1,30 @@
+* NGSPICE file created from OR.ext - technology: gf180mcuD
+
+.subckt OR A B Y VDD VSS
+X0 VDD B a_651_86# VDD pfet_03v3 ad=0.9p pd=4.9u as=0.53p ps=2.53u w=2u l=0.28u
+X1 VSS A a_505_n286# VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X2 a_651_86# A a_505_n286# VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X3 a_505_n286# B VSS VSS nfet_03v3 ad=0.45p pd=2.9u as=0.265p ps=1.53u w=1u l=0.28u
+X4 Y a_505_n286# VSS VSS nfet_03v3 ad=0.625p pd=3.25u as=0.625p ps=3.25u w=1u l=0.28u
+X5 Y a_505_n286# VDD VDD pfet_03v3 ad=1.25p pd=5.25u as=1.25p ps=5.25u w=2u l=0.28u
+C0 a_505_n286# a_651_86# 0.02609f
+C1 a_505_n286# VDD 0.60195f
+C2 a_505_n286# A 0.06265f
+C3 a_505_n286# B 0.06594f
+C4 a_505_n286# Y 0.12779f
+C5 a_651_86# VDD 0.03536f
+C6 a_651_86# Y 0
+C7 VDD A 0.59831f
+C8 VDD B 0.11999f
+C9 VDD Y 0.63118f
+C10 A B 0.05231f
+C11 A Y 0
+C12 B Y 0
+C13 Y VSS 0.74439f
+C14 B VSS 1.30453f
+C15 A VSS 0.5295f
+C16 VDD VSS 6.17565f
+C17 a_651_86# VSS 0.00201f
+C18 a_505_n286# VSS 0.79095f
+.ends
+

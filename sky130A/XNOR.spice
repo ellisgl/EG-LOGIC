@@ -1,0 +1,54 @@
+* NGSPICE file created from XNOR.ext - technology: sky130A
+
+.subckt XNOR A B Y VDD VSS
+X0 VDD B a_1115_164# VDD sky130_fd_pr__pfet_01v8 ad=0.2425 pd=1.485 as=0.14 ps=1.28 w=1 l=0.15
+X1 Y a_744_n285# a_1028_n285# VSS sky130_fd_pr__nfet_01v8 ad=0.3185 pd=2.28 as=0.15763 ps=1.135 w=0.65 l=0.15
+X2 Y a_744_n285# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.49 pd=2.98 as=0.2425 ps=1.485 w=1 l=0.15
+X3 VDD A a_744_n285# VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+X4 a_744_n285# B VDD VDD sky130_fd_pr__pfet_01v8 ad=0.285 pd=2.57 as=0.14 ps=1.28 w=1 l=0.15
+X5 a_831_n285# A a_744_n285# VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+X6 a_1115_164# A Y VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+X7 VSS B a_831_n285# VSS sky130_fd_pr__nfet_01v8 ad=0.18525 pd=1.87 as=0.091 ps=0.93 w=0.65 l=0.15
+X8 VSS A a_1028_n285# VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+X9 a_1028_n285# B VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15763 pd=1.135 as=0.091 ps=0.93 w=0.65 l=0.15
+C0 a_744_n285# a_831_n285# 0.0075f
+C1 a_744_n285# a_1028_n285# 0.08737f
+C2 a_744_n285# li_n59_n770# 0.0058f
+C3 a_744_n285# m1_n59_n770# 0
+C4 a_744_n285# VDD 0.46303f
+C5 a_744_n285# A 0.07553f
+C6 a_744_n285# B 0.12547f
+C7 a_744_n285# Y 0.25498f
+C8 a_1115_164# VDD 0.01489f
+C9 a_1115_164# Y 0.01259f
+C10 a_831_n285# VDD 0
+C11 a_1028_n285# VDD 0.00128f
+C12 a_1028_n285# A 0.024f
+C13 a_1028_n285# B 0.02824f
+C14 a_1028_n285# Y 0.0424f
+C15 li_n59_n770# m1_n59_n770# 0.64924f
+C16 li_n59_n770# VDD 0.08118f
+C17 li_n59_n770# A 0.06415f
+C18 li_n59_n770# B 0.06302f
+C19 m1_n59_n770# VDD 0.12255f
+C20 m1_n59_n770# A 0.01731f
+C21 m1_n59_n770# B 0.01723f
+C22 m1_n59_n770# Y 0
+C23 VDD A 0.71962f
+C24 VDD B 0.18555f
+C25 VDD Y 0.53055f
+C26 A B 0.2998f
+C27 A Y 0.0304f
+C28 B Y 0.02269f
+C29 Y VSS 1.22449f
+C30 B VSS 1.54011f
+C31 A VSS 0.87556f
+C32 VDD VSS 4.28835f
+C33 m1_n59_n770# VSS 0.715f ; **FLOATING
+C34 li_n59_n770# VSS 0.91068f ; **FLOATING
+C35 a_1028_n285# VSS 0.20057f
+C36 a_831_n285# VSS 0.00973f
+C37 a_1115_164# VSS 0
+C38 a_744_n285# VSS 0.31247f
+.ends
+

@@ -1,0 +1,13 @@
+* XOR reference (sky130A)
+.subckt XOR A B Y VDD VSS
+X1 c A p0_1 VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X2 p0_1 B VDD VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X3 c A VSS VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X4 VSS B c VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X5 p1 A VDD VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X6 VDD B p1 VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X7 p1 c Y VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X8 Y A n1_1 VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X9 n1_1 B VSS VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X10 VSS c Y VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+.ends

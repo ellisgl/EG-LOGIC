@@ -1,0 +1,13 @@
+* XNOR reference (sky130A)
+.subckt XNOR A B Y VDD VSS
+X1 c A VDD VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X2 VDD B c VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X3 c A n0_1 VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X4 n0_1 B VSS VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X5 Y A p1_1 VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X6 p1_1 B VDD VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X7 VDD c Y VDD sky130_fd_pr__pfet_01v8 w=1 l=0.15
+X8 n1 A VSS VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X9 VSS B n1 VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+X10 n1 c Y VSS sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+.ends

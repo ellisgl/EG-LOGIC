@@ -1,0 +1,7 @@
+* NGSPICE file created from NOT.ext - technology: gf180mcuD
+
+.subckt NOT A Y VDD VSS
+X0 Y A VDD VDD pfet_03v3 ad=0.9p pd=4.9u as=0.9p ps=4.9u w=2u l=0.28u
+X1 Y A VSS VSS nfet_03v3 ad=0.45p pd=2.9u as=0.45p ps=2.9u w=1u l=0.28u
+.ends
+
