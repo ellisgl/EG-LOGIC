@@ -1,0 +1,2 @@
+sky130A ADD4  DRC 0  LVS match
+sky130A ADD4: 512/512 vectors correct, worst-case settle 1382 ps (10 fF loads)

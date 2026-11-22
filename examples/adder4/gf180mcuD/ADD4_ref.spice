@@ -1,0 +1,57 @@
+* ADD4 reference (gf180mcuD)
+* AND reference (gf180mcuD)
+.subckt AND A B Y VDD VSS
+X1 x A VDD VDD pfet_03v3 w=2u l=0.28u
+X2 VDD B x VDD pfet_03v3 w=2u l=0.28u
+X3 x A n0_1 VSS nfet_03v3 w=1u l=0.28u
+X4 n0_1 B VSS VSS nfet_03v3 w=1u l=0.28u
+X5 VDD x Y VDD pfet_03v3 w=2u l=0.28u
+X6 VSS x Y VSS nfet_03v3 w=1u l=0.28u
+.ends
+
+* OR reference (gf180mcuD)
+.subckt OR A B Y VDD VSS
+X1 x A p0_1 VDD pfet_03v3 w=2u l=0.28u
+X2 p0_1 B VDD VDD pfet_03v3 w=2u l=0.28u
+X3 x A VSS VSS nfet_03v3 w=1u l=0.28u
+X4 VSS B x VSS nfet_03v3 w=1u l=0.28u
+X5 VDD x Y VDD pfet_03v3 w=2u l=0.28u
+X6 VSS x Y VSS nfet_03v3 w=1u l=0.28u
+.ends
+
+* XOR reference (gf180mcuD)
+.subckt XOR A B Y VDD VSS
+X1 c A p0_1 VDD pfet_03v3 w=2u l=0.28u
+X2 p0_1 B VDD VDD pfet_03v3 w=2u l=0.28u
+X3 c A VSS VSS nfet_03v3 w=1u l=0.28u
+X4 VSS B c VSS nfet_03v3 w=1u l=0.28u
+X5 p1 A VDD VDD pfet_03v3 w=2u l=0.28u
+X6 VDD B p1 VDD pfet_03v3 w=2u l=0.28u
+X7 p1 c Y VDD pfet_03v3 w=2u l=0.28u
+X8 Y A n1_1 VSS nfet_03v3 w=1u l=0.28u
+X9 n1_1 B VSS VSS nfet_03v3 w=1u l=0.28u
+X10 VSS c Y VSS nfet_03v3 w=1u l=0.28u
+.ends
+
+.subckt ADD4 A0 A1 A2 A3 B0 B1 B2 B3 Cin S0 S1 S2 S3 Cout VDD VSS
+XXOR_0_0 A0 B0 x0 VDD VSS XOR
+XAND_0_1 A0 B0 g0 VDD VSS AND
+XXOR_0_2 x0 Cin S0 VDD VSS XOR
+XAND_0_3 x0 Cin t0 VDD VSS AND
+XOR_0_4 g0 t0 c1 VDD VSS OR
+XXOR_1_0 A1 B1 x1 VDD VSS XOR
+XAND_1_1 A1 B1 g1 VDD VSS AND
+XXOR_1_2 x1 c1 S1 VDD VSS XOR
+XAND_1_3 x1 c1 t1 VDD VSS AND
+XOR_1_4 g1 t1 c2 VDD VSS OR
+XXOR_2_0 A2 B2 x2 VDD VSS XOR
+XAND_2_1 A2 B2 g2 VDD VSS AND
+XXOR_2_2 x2 c2 S2 VDD VSS XOR
+XAND_2_3 x2 c2 t2 VDD VSS AND
+XOR_2_4 g2 t2 c3 VDD VSS OR
+XXOR_3_0 A3 B3 x3 VDD VSS XOR
+XAND_3_1 A3 B3 g3 VDD VSS AND
+XXOR_3_2 x3 c3 S3 VDD VSS XOR
+XAND_3_3 x3 c3 t3 VDD VSS AND
+XOR_3_4 g3 t3 Cout VDD VSS OR
+.ends

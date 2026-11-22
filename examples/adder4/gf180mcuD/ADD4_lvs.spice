@@ -1,0 +1,56 @@
+* NGSPICE file created from ADD4.ext - technology: gf180mcuD
+
+.subckt AND A B Y VDD VSS
+X0 VDD A a_323_n286# VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X1 a_469_n286# A a_323_n286# VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X2 Y a_323_n286# VSS VSS nfet_03v3 ad=0.625p pd=3.25u as=0.625p ps=3.25u w=1u l=0.28u
+X3 VSS B a_469_n286# VSS nfet_03v3 ad=0.45p pd=2.9u as=0.265p ps=1.53u w=1u l=0.28u
+X4 Y a_323_n286# VDD VDD pfet_03v3 ad=1.25p pd=5.25u as=1.25p ps=5.25u w=2u l=0.28u
+X5 a_323_n286# B VDD VDD pfet_03v3 ad=0.9p pd=4.9u as=0.53p ps=2.53u w=2u l=0.28u
+.ends
+
+.subckt XOR A B Y VDD VSS
+X0 Y a_1009_n395# a_1463_195# VDD pfet_03v3 ad=1.25p pd=5.25u as=0.705p ps=2.705u w=2u l=0.28u
+X1 a_1463_195# B VDD VDD pfet_03v3 ad=0.705p pd=2.705u as=0.53p ps=2.53u w=2u l=0.28u
+X2 VDD A a_1463_195# VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X3 a_1009_n395# B VSS VSS nfet_03v3 ad=0.45p pd=2.9u as=0.265p ps=1.53u w=1u l=0.28u
+X4 a_1609_n395# A Y VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X5 VDD B a_1155_195# VDD pfet_03v3 ad=0.9p pd=4.9u as=0.53p ps=2.53u w=2u l=0.28u
+X6 VSS B a_1609_n395# VSS nfet_03v3 ad=0.3525p pd=1.705u as=0.265p ps=1.53u w=1u l=0.28u
+X7 a_1155_195# A a_1009_n395# VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X8 VSS A a_1009_n395# VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X9 Y a_1009_n395# VSS VSS nfet_03v3 ad=0.625p pd=3.25u as=0.3525p ps=1.705u w=1u l=0.28u
+.ends
+
+.subckt OR A B Y VDD VSS
+X0 VDD B a_651_86# VDD pfet_03v3 ad=0.9p pd=4.9u as=0.53p ps=2.53u w=2u l=0.28u
+X1 VSS A a_505_n286# VSS nfet_03v3 ad=0.265p pd=1.53u as=0.45p ps=2.9u w=1u l=0.28u
+X2 a_651_86# A a_505_n286# VDD pfet_03v3 ad=0.53p pd=2.53u as=0.9p ps=4.9u w=2u l=0.28u
+X3 a_505_n286# B VSS VSS nfet_03v3 ad=0.45p pd=2.9u as=0.265p ps=1.53u w=1u l=0.28u
+X4 Y a_505_n286# VSS VSS nfet_03v3 ad=0.625p pd=3.25u as=0.625p ps=3.25u w=1u l=0.28u
+X5 Y a_505_n286# VDD VDD pfet_03v3 ad=1.25p pd=5.25u as=1.25p ps=5.25u w=2u l=0.28u
+.ends
+
+.subckt ADD4 A0 A1 A2 A3 B0 B1 B2 B3 Cin S0 S1 S2 S3 Cout VDD VSS
+XAND_3_3 XOR_3_2/A OR_2_4/Y OR_3_4/B VDD VSS AND
+XXOR_2_0 A2 B2 XOR_2_2/A VDD VSS XOR
+XAND_1_1 A1 B1 OR_1_4/A VDD VSS AND
+XXOR_2_2 XOR_2_2/A OR_1_4/Y S2 VDD VSS XOR
+XAND_1_3 XOR_1_2/A OR_0_4/Y OR_1_4/B VDD VSS AND
+XXOR_0_0 A0 B0 XOR_0_2/A VDD VSS XOR
+XXOR_0_2 XOR_0_2/A Cin S0 VDD VSS XOR
+XOR_2_4 OR_2_4/A OR_2_4/B OR_2_4/Y VDD VSS OR
+XOR_0_4 OR_0_4/A OR_0_4/B OR_0_4/Y VDD VSS OR
+XAND_2_1 A2 B2 OR_2_4/A VDD VSS AND
+XXOR_3_0 A3 B3 XOR_3_2/A VDD VSS XOR
+XXOR_3_2 XOR_3_2/A OR_2_4/Y S3 VDD VSS XOR
+XAND_2_3 XOR_2_2/A OR_1_4/Y OR_2_4/B VDD VSS AND
+XXOR_1_0 A1 B1 XOR_1_2/A VDD VSS XOR
+XAND_0_1 A0 B0 OR_0_4/A VDD VSS AND
+XXOR_1_2 XOR_1_2/A OR_0_4/Y S1 VDD VSS XOR
+XAND_0_3 XOR_0_2/A Cin OR_0_4/B VDD VSS AND
+XOR_3_4 OR_3_4/A OR_3_4/B Cout VDD VSS OR
+XOR_1_4 OR_1_4/A OR_1_4/B OR_1_4/Y VDD VSS OR
+XAND_3_1 A3 B3 OR_3_4/A VDD VSS AND
+.ends
+

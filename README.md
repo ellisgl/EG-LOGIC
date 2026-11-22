@@ -114,6 +114,8 @@ Series stacks are not upsized, so NOR's rising edge and NAND's falling edge are 
 - `scripts/drc_dump.tcl`, `scripts/drc_overlay.py`: plot DRC error boxes over a cell (debugging)
 - `sim/run_sim.py`: ngspice testbenches; writes `sim/<pdk>_results.json`
 - `run_all.sh`: the whole generate / DRC / extract / LVS flow
+- `examples/adder4/`: a 4-bit ripple-carry adder built from these cells, for both PDKs. It is
+  DRC/LVS clean and passes an exhaustive simulation; see its [README](examples/adder4/README.md).
 
 ## Rebuild
 ```sh

@@ -5,3 +5,4 @@ sim/out/
 *_netgen.log
 drc_boxes.txt
 *_drc.png
+run.log
