@@ -1,0 +1,126 @@
+* NGSPICE file created from ALU181.ext - technology: sky130A
+
+.subckt AND A B Y VDD VSS
+X0 Y a_242_n201# VSS VSS sky130_fd_pr__nfet_01v8 ad=0.3185 pd=2.28 as=0.3185 ps=2.28 w=0.65 l=0.15
+X1 a_242_n201# B VDD VDD sky130_fd_pr__pfet_01v8 ad=0.285 pd=2.57 as=0.14 ps=1.28 w=1 l=0.15
+X2 Y a_242_n201# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.49 pd=2.98 as=0.49 ps=2.98 w=1 l=0.15
+X3 a_329_n201# A a_242_n201# VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+X4 VDD A a_242_n201# VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+X5 VSS B a_329_n201# VSS sky130_fd_pr__nfet_01v8 ad=0.18525 pd=1.87 as=0.091 ps=0.93 w=0.65 l=0.15
+.ends
+
+.subckt NAND A B Y VDD VSS
+X0 Y B VDD VDD sky130_fd_pr__pfet_01v8 ad=0.285 pd=2.57 as=0.14 ps=1.28 w=1 l=0.15
+X1 VSS B a_371_n201# VSS sky130_fd_pr__nfet_01v8 ad=0.18525 pd=1.87 as=0.091 ps=0.93 w=0.65 l=0.15
+X2 VDD A Y VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+X3 a_371_n201# A Y VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+.ends
+
+.subckt NOT A Y VDD VSS
+X0 Y A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.285 pd=2.57 as=0.285 ps=2.57 w=1 l=0.15
+X1 Y A VSS VSS sky130_fd_pr__nfet_01v8 ad=0.18525 pd=1.87 as=0.18525 ps=1.87 w=0.65 l=0.15
+.ends
+
+.subckt OR A B Y VDD VSS
+X0 Y a_407_n201# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.49 pd=2.98 as=0.49 ps=2.98 w=1 l=0.15
+X1 VSS A a_407_n201# VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+X2 a_407_n201# B VSS VSS sky130_fd_pr__nfet_01v8 ad=0.18525 pd=1.87 as=0.091 ps=0.93 w=0.65 l=0.15
+X3 VDD B a_494_80# VDD sky130_fd_pr__pfet_01v8 ad=0.285 pd=2.57 as=0.14 ps=1.28 w=1 l=0.15
+X4 Y a_407_n201# VSS VSS sky130_fd_pr__nfet_01v8 ad=0.3185 pd=2.28 as=0.3185 ps=2.28 w=0.65 l=0.15
+X5 a_494_80# A a_407_n201# VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+.ends
+
+.subckt XOR A B Y VDD VSS
+X0 a_1028_164# B VDD VDD sky130_fd_pr__pfet_01v8 ad=0.2425 pd=1.485 as=0.14 ps=1.28 w=1 l=0.15
+X1 Y a_744_n285# VSS VSS sky130_fd_pr__nfet_01v8 ad=0.3185 pd=2.28 as=0.15763 ps=1.135 w=0.65 l=0.15
+X2 Y a_744_n285# a_1028_164# VDD sky130_fd_pr__pfet_01v8 ad=0.49 pd=2.98 as=0.2425 ps=1.485 w=1 l=0.15
+X3 a_831_164# A a_744_n285# VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+X4 VDD B a_831_164# VDD sky130_fd_pr__pfet_01v8 ad=0.285 pd=2.57 as=0.14 ps=1.28 w=1 l=0.15
+X5 VSS A a_744_n285# VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+X6 VDD A a_1028_164# VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+X7 a_744_n285# B VSS VSS sky130_fd_pr__nfet_01v8 ad=0.18525 pd=1.87 as=0.091 ps=0.93 w=0.65 l=0.15
+X8 a_1115_n285# A Y VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+X9 VSS B a_1115_n285# VSS sky130_fd_pr__nfet_01v8 ad=0.15763 pd=1.135 as=0.091 ps=0.93 w=0.65 l=0.15
+.ends
+
+.subckt NOR A B Y VDD VSS
+X0 a_490_80# A Y VDD sky130_fd_pr__pfet_01v8 ad=0.14 pd=1.28 as=0.285 ps=2.57 w=1 l=0.15
+X1 VDD B a_490_80# VDD sky130_fd_pr__pfet_01v8 ad=0.285 pd=2.57 as=0.14 ps=1.28 w=1 l=0.15
+X2 Y B VSS VSS sky130_fd_pr__nfet_01v8 ad=0.18525 pd=1.87 as=0.091 ps=0.93 w=0.65 l=0.15
+X3 VSS A Y VSS sky130_fd_pr__nfet_01v8 ad=0.091 pd=0.93 as=0.18525 ps=1.87 w=0.65 l=0.15
+.ends
+
+.subckt ALU181 A0 A1 A2 A3 B0 B1 B2 B3 S0 S1 S2 S3 M Cn F0 F1 F2 F3 AEQB P_N G_N Cn4
++ VDD VSS
+XAND_e23 F2 F3 AND_eq/B VDD VSS AND
+XAND_e01 F0 F1 AND_eq/A VDD VSS AND
+XNAND_a4_0 B0 S3 NAND_v0/B VDD VSS NAND
+XNOT_nb0 B0 NOT_nb0/Y VDD VSS NOT
+XNAND_a4_1 B1 S3 NAND_v1/B VDD VSS NAND
+XNOT_nb1 B1 NOT_nb1/Y VDD VSS NOT
+XNAND_a4_3 B3 S3 NAND_v3/B VDD VSS NAND
+XNAND_a4_2 B2 S3 NAND_v2/B VDD VSS NAND
+XNOT_nb2 B2 NOT_nb2/Y VDD VSS NOT
+XOR_p0 A0 OR_p0/B OR_p0/Y VDD VSS OR
+XNOT_nb3 B3 NOT_nb3/Y VDD VSS NOT
+XOR_p1 A1 OR_p1/B OR_p1/Y VDD VSS OR
+XNAND_a2_1 NOT_nb1/Y S1 NAND_u1/B VDD VSS NAND
+XNAND_a2_0 NOT_nb0/Y S1 NAND_u0/B VDD VSS NAND
+XOR_p3 A3 OR_p3/B OR_p3/Y VDD VSS OR
+XOR_p2 A2 OR_p2/B OR_p2/Y VDD VSS OR
+XNAND_a2_2 NOT_nb2/Y S1 NAND_u2/B VDD VSS NAND
+XXOR_h0 OR_p0/Y XOR_h0/B XOR_h0/Y VDD VSS XOR
+XNAND_a2_3 NOT_nb3/Y S1 NAND_u3/B VDD VSS NAND
+XXOR_h1 OR_p1/Y XOR_h1/B XOR_h1/Y VDD VSS XOR
+XNOT_ncout OR_cy3/Y Cn4 VDD VSS NOT
+XXOR_h2 OR_p2/Y XOR_h2/B XOR_h2/Y VDD VSS XOR
+XXOR_f0 XOR_h0/Y OR_k0/Y F0 VDD VSS XOR
+XOR_k0 M OR_k0/B OR_k0/Y VDD VSS OR
+XXOR_h3 OR_p3/Y XOR_h3/B XOR_h3/Y VDD VSS XOR
+XXOR_f1 XOR_h1/Y OR_k1/Y F1 VDD VSS XOR
+XOR_k1 M OR_k1/B OR_k1/Y VDD VSS OR
+XXOR_f3 XOR_h3/Y OR_k3/Y F3 VDD VSS XOR
+XXOR_f2 XOR_h2/Y OR_k2/Y F2 VDD VSS XOR
+XOR_k2 M OR_k2/B OR_k2/Y VDD VSS OR
+XOR_k3 M OR_k3/B OR_k3/Y VDD VSS OR
+XNAND_pg NAND_pg/A NAND_pg/B P_N VDD VSS NAND
+XNAND_a3_0 NOT_nb0/Y S2 NAND_v0/A VDD VSS NAND
+XAND_q1 OR_p1/Y XOR_h0/B OR_gr1/B VDD VSS AND
+XNAND_a3_1 NOT_nb1/Y S2 NAND_v1/A VDD VSS NAND
+XAND_pc0 OR_p0/Y OR_k0/B OR_cy0/B VDD VSS AND
+XAND_q3 OR_p3/Y OR_gr2/Y NOR_gg/B VDD VSS AND
+XAND_q2 OR_p2/Y OR_gr1/Y OR_gr2/B VDD VSS AND
+XNAND_a3_2 NOT_nb2/Y S2 NAND_v2/A VDD VSS NAND
+XAND_pc1 OR_p1/Y OR_k1/B OR_cy1/B VDD VSS AND
+XNAND_a3_3 NOT_nb3/Y S2 NAND_v3/A VDD VSS NAND
+XAND_pc2 OR_p2/Y OR_k2/B OR_cy2/B VDD VSS AND
+XNAND_v1 NAND_v1/A NAND_v1/B AND_g1/B VDD VSS NAND
+XNAND_v0 NAND_v0/A NAND_v0/B AND_g0/B VDD VSS NAND
+XNAND_u0 NAND_u0/A NAND_u0/B OR_p0/B VDD VSS NAND
+XNAND_a1_0 B0 S0 NAND_u0/A VDD VSS NAND
+XAND_eq AND_eq/A AND_eq/B AEQB VDD VSS AND
+XAND_pc3 OR_p3/Y OR_k3/B OR_cy3/B VDD VSS AND
+XNAND_v2 NAND_v2/A NAND_v2/B AND_g2/B VDD VSS NAND
+XNAND_u1 NAND_u1/A NAND_u1/B OR_p1/B VDD VSS NAND
+XNAND_a1_1 B1 S0 NAND_u1/A VDD VSS NAND
+XNAND_v3 NAND_v3/A NAND_v3/B AND_g3/B VDD VSS NAND
+XNAND_u2 NAND_u2/A NAND_u2/B OR_p2/B VDD VSS NAND
+XNAND_a1_2 B2 S0 NAND_u2/A VDD VSS NAND
+XNOT_ncn Cn OR_k0/B VDD VSS NOT
+XAND_pp23 OR_p2/Y OR_p3/Y NAND_pg/B VDD VSS AND
+XAND_pp01 OR_p0/Y OR_p1/Y NAND_pg/A VDD VSS AND
+XNAND_u3 NAND_u3/A NAND_u3/B OR_p3/B VDD VSS NAND
+XNAND_a1_3 B3 S0 NAND_u3/A VDD VSS NAND
+XNOR_gg XOR_h3/B NOR_gg/B G_N VDD VSS NOR
+XOR_cy0 XOR_h0/B OR_cy0/B OR_k1/B VDD VSS OR
+XOR_gr1 XOR_h1/B OR_gr1/B OR_gr1/Y VDD VSS OR
+XOR_cy1 XOR_h1/B OR_cy1/B OR_k2/B VDD VSS OR
+XOR_gr2 XOR_h2/B OR_gr2/B OR_gr2/Y VDD VSS OR
+XOR_cy2 XOR_h2/B OR_cy2/B OR_k3/B VDD VSS OR
+XAND_g0 A0 AND_g0/B XOR_h0/B VDD VSS AND
+XOR_cy3 XOR_h3/B OR_cy3/B OR_cy3/Y VDD VSS OR
+XAND_g2 A2 AND_g2/B XOR_h2/B VDD VSS AND
+XAND_g1 A1 AND_g1/B XOR_h1/B VDD VSS AND
+XAND_g3 A3 AND_g3/B XOR_h3/B VDD VSS AND
+.ends
+

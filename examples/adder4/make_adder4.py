@@ -52,6 +52,37 @@ def cell_info(pdk, name):
     for m in re.finditer(r'rlabel \S+ (\S+) (\S+) (\S+) (\S+) \d+ (\S+)', txt):
         x0, y0, x1, y1 = (int(v) * G for v in m.groups()[:4])
         pins[m.group(5)] = (snap((x0 + x1) / 2), snap((y0 + y1) / 2))
+    # Power stubs attach where the outline's top (VDD) / bottom (VSS) edge is
+    # highest / lowest, at the middle of that flat stretch: the band falls away
+    # on both sides of the stub there, so no narrow notch can form.
+    # Only the R2 shape under the cell's own VDD / VSS label counts (XOR's
+    # floating back arc is taller than the body, for example).
+    from scipy import ndimage
+    r2 = UP[pdk]['r2']
+    sec = re.search(rf'<< {r2} >>\n(.*?)(?=<<)', txt, re.S).group(1)
+    rr = np.array([[int(v) for v in ln.split()[1:5]] for ln in sec.strip().splitlines()])
+    ox, oy = rr[:, 0].min(), rr[:, 1].min()
+    m = np.zeros((rr[:, 3].max() - oy, rr[:, 2].max() - ox), bool)
+    for x0, y0, x1, y1 in rr:
+        m[y0 - oy:y1 - oy, x0 - ox:x1 - ox] = True
+    lab, _ = ndimage.label(m)
+    for nm in ('VDD', 'VSS'):
+        lx, ly = (int(round(v / G)) for v in pins[nm])
+        # the label may sit on a via (a hole in R2 here): take the shape that
+        # fills most of a small window around it
+        k = int(0.3 / G)
+        win = lab[max(ly - oy - k, 0):ly - oy + k, max(lx - ox - k, 0):lx - ox + k]
+        ids, cnt = np.unique(win[win > 0], return_counts=True)
+        assert len(ids), f'{name} {nm} label not on R2'
+        comp = lab == ids[np.argmax(cnt)]
+        rows = np.nonzero(comp.any(axis=1))[0]
+        i = rows[-1] if nm == 'VDD' else rows[0]              # top / bottom row of the shape
+        cols = np.nonzero(comp[i])[0]
+        run = np.split(cols, np.nonzero(np.diff(cols) > 1)[0] + 1)[0]   # its first flat stretch
+        xm = (ox + run[len(run) // 2]) * G
+        ym = (oy + i + (1 if nm == 'VDD' else 0)) * G
+        band = 0.25                                  # start the stub this far inside the band
+        pins[nm] = (snap(xm), snap(ym - band if nm == 'VDD' else ym + band))
     return dict(bbox=bb, pins=pins)
 
 
@@ -362,7 +393,7 @@ def preview(fn, pdk, L, U):
     for nm, lay, (a0, a1, b0, b1) in L['labels']:
         ax.text((a0 + a1) / 2, (b0 + b1) / 2, nm, fontsize=7, ha='center', va='center',
                 bbox=dict(fc='w', ec='none', alpha=.7, pad=1))
-    ax.set_title(f'ADD4 ({pdk})   cyan = {U["r3"]} (horizontal), orange = {U["r4"]} (vertical)', fontsize=9)
+    ax.set_title(f'{os.path.basename(fn).split("_preview")[0]} ({pdk})   cyan = {U["r3"]} (horizontal), orange = {U["r4"]} (vertical)', fontsize=9)
     ax.set_xlabel('um')
     plt.tight_layout()
     plt.savefig(fn, dpi=110)

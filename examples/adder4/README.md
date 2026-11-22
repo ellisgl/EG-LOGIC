@@ -4,7 +4,7 @@ A 4-bit adder built from the EG-LOGIC symbol cells, for SKY130 and GF180MCU.
 **SKY130**: 90.3 x 53.8 um
 ![SKY130 ADD4](sky130A/ADD4_preview.png)
 
-**GF180MCU**: 112.0 x 65.4 um
+**GF180MCU**: 112.0 x 71.8 um
 ![GF180MCU ADD4](gf180mcuD/ADD4_preview.png)
 
 ## Structure
@@ -42,7 +42,7 @@ Ports: `A0..A3`, `B0..B3` and `Cin` on the left edge, `S0..S3` and `Cout` on the
 | Magic DRC (`drc(full)`, whole hierarchy) | 0 errors | 0 errors |
 | Netgen LVS (hierarchical, vs. `ADD4_ref.spice`) | match | match |
 | ngspice, all 512 A/B/Cin vectors (extracted, with parasitic C) | 512/512 | 512/512 |
-| Worst-case settle time (typical, 10 fF per output) | 1.38 ns | 1.91 ns |
+| Worst-case settle time (typical, 10 fF per output) | 1.38 ns | 1.90 ns |
 
 The settle time is measured from an input edge to the last output crossing VDD/2. It is the
 carry ripple through four AND-OR stages.

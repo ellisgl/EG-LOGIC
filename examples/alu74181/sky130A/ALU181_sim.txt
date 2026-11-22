@@ -1,0 +1,1 @@
+sky130A ALU181: 260/260 vectors correct (all 8 outputs), worst-case settle 2375 ps (10 fF loads)

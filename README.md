@@ -116,6 +116,9 @@ Series stacks are not upsized, so NOR's rising edge and NAND's falling edge are 
 - `run_all.sh`: the whole generate / DRC / extract / LVS flow
 - `examples/adder4/`: a 4-bit ripple-carry adder built from these cells, for both PDKs. It is
   DRC/LVS clean and passes an exhaustive simulation; see its [README](examples/adder4/README.md).
+- `examples/alu74181/`: a 74181 4-bit ALU (70 cells) for both PDKs. It is DRC/LVS clean and
+  passes simulation. The SKY130 version fits in a Tiny Tapeout 1x1 tile; see its
+  [README](examples/alu74181/README.md).
 
 ## Rebuild
 ```sh

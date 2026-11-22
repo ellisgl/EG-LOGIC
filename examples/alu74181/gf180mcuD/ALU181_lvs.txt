@@ -1,0 +1,209 @@
+
+Circuit 1 cell pfet_03v3 and Circuit 2 cell pfet_03v3 are black boxes.
+Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: pfet_03v3                       |Circuit 2: pfet_03v3                       
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes pfet_03v3 and pfet_03v3 are equivalent.
+
+Circuit 1 cell nfet_03v3 and Circuit 2 cell nfet_03v3 are black boxes.
+Warning: Equate pins:  cell nfet_03v3 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell nfet_03v3 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: nfet_03v3                       |Circuit 2: nfet_03v3                       
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes nfet_03v3 and nfet_03v3 are equivalent.
+
+Subcircuit summary:
+Circuit 1: AND                             |Circuit 2: AND                             
+-------------------------------------------|-------------------------------------------
+pfet_03v3 (3)                              |pfet_03v3 (3)                              
+nfet_03v3 (3)                              |nfet_03v3 (3)                              
+Number of devices: 6                       |Number of devices: 6                       
+Number of nets: 7                          |Number of nets: 7                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: AND                             |Circuit 2: AND                             
+-------------------------------------------|-------------------------------------------
+VSS                                        |VSS                                        
+B                                          |B                                          
+A                                          |A                                          
+Y                                          |Y                                          
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes AND and AND are equivalent.
+
+Subcircuit summary:
+Circuit 1: NAND                            |Circuit 2: NAND                            
+-------------------------------------------|-------------------------------------------
+nfet_03v3 (2)                              |nfet_03v3 (2)                              
+pfet_03v3 (2)                              |pfet_03v3 (2)                              
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 6                          |Number of nets: 6                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: NAND                            |Circuit 2: NAND                            
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+Y                                          |Y                                          
+VSS                                        |VSS                                        
+B                                          |B                                          
+A                                          |A                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes NAND and NAND are equivalent.
+
+Subcircuit summary:
+Circuit 1: NOT                             |Circuit 2: NOT                             
+-------------------------------------------|-------------------------------------------
+pfet_03v3 (1)                              |pfet_03v3 (1)                              
+nfet_03v3 (1)                              |nfet_03v3 (1)                              
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: NOT                             |Circuit 2: NOT                             
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+A                                          |A                                          
+Y                                          |Y                                          
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes NOT and NOT are equivalent.
+
+Subcircuit summary:
+Circuit 1: OR                              |Circuit 2: OR                              
+-------------------------------------------|-------------------------------------------
+pfet_03v3 (3)                              |pfet_03v3 (3)                              
+nfet_03v3 (3)                              |nfet_03v3 (3)                              
+Number of devices: 6                       |Number of devices: 6                       
+Number of nets: 7                          |Number of nets: 7                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: OR                              |Circuit 2: OR                              
+-------------------------------------------|-------------------------------------------
+VSS                                        |VSS                                        
+A                                          |A                                          
+B                                          |B                                          
+Y                                          |Y                                          
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes OR and OR are equivalent.
+
+Subcircuit summary:
+Circuit 1: XOR                             |Circuit 2: XOR                             
+-------------------------------------------|-------------------------------------------
+pfet_03v3 (5)                              |pfet_03v3 (5)                              
+nfet_03v3 (5)                              |nfet_03v3 (5)                              
+Number of devices: 10                      |Number of devices: 10                      
+Number of nets: 9                          |Number of nets: 9                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: XOR                             |Circuit 2: XOR                             
+-------------------------------------------|-------------------------------------------
+VSS                                        |VSS                                        
+A                                          |A                                          
+B                                          |B                                          
+VDD                                        |VDD                                        
+Y                                          |Y                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes XOR and XOR are equivalent.
+
+Subcircuit summary:
+Circuit 1: NOR                             |Circuit 2: NOR                             
+-------------------------------------------|-------------------------------------------
+nfet_03v3 (2)                              |nfet_03v3 (2)                              
+pfet_03v3 (2)                              |pfet_03v3 (2)                              
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 6                          |Number of nets: 6                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: NOR                             |Circuit 2: NOR                             
+-------------------------------------------|-------------------------------------------
+VSS                                        |VSS                                        
+A                                          |A                                          
+B                                          |B                                          
+Y                                          |Y                                          
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes NOR and NOR are equivalent.
+
+Subcircuit summary:
+Circuit 1: ALU181                          |Circuit 2: ALU181                          
+-------------------------------------------|-------------------------------------------
+AND (16)                                   |AND (16)                                   
+NAND (25)                                  |NAND (25)                                  
+NOT (6)                                    |NOT (6)                                    
+OR (14)                                    |OR (14)                                    
+XOR (8)                                    |XOR (8)                                    
+NOR (1)                                    |NOR (1)                                    
+Number of devices: 70                      |Number of devices: 70                      
+Number of nets: 86                         |Number of nets: 86                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: ALU181                          |Circuit 2: ALU181                          
+-------------------------------------------|-------------------------------------------
+Cn                                         |Cn                                         
+Cn4                                        |Cn4                                        
+P_N                                        |P_N                                        
+G_N                                        |G_N                                        
+AEQB                                       |AEQB                                       
+S0                                         |S0                                         
+S2                                         |S2                                         
+S1                                         |S1                                         
+S3                                         |S3                                         
+M                                          |M                                          
+B0                                         |B0                                         
+B2                                         |B2                                         
+B3                                         |B3                                         
+B1                                         |B1                                         
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+A0                                         |A0                                         
+F2                                         |F2                                         
+F0                                         |F0                                         
+A2                                         |A2                                         
+A3                                         |A3                                         
+A1                                         |A1                                         
+F3                                         |F3                                         
+F1                                         |F1                                         
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes ALU181 and ALU181 are equivalent.
+
+Final result: Circuits match uniquely.
+.
